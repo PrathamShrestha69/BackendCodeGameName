@@ -1,9 +1,9 @@
 import express from "express";
+import { getUsers, registerNewUser } from "../controllers/user.controller.js";
 
 const userRouter = express.Router();
 
-userRouter.get("/getuser", (req, res) => {
-  res.status(200).send("okay accepted");
-});
+userRouter.post("/registernew", registerNewUser);
+userRouter.get("/getusers", getUsers);
 
 export default userRouter;
