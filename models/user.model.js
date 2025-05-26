@@ -7,6 +7,23 @@ const userSchema = new Schema({
     required: true,
     unique: true,
   },
+  userUniqueID: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  isUserAdmin: {
+    type: Boolean,
+    required: true,
+  },
+  userTeam: {
+    type: String,
+    default: undefined,
+  },
+  userRole: {
+    type: String,
+    default: undefined,
+  },
 });
 
 export default mongoose.model("User", userSchema);
