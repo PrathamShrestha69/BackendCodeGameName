@@ -14,7 +14,7 @@ const userSchema = new Schema({
   },
   isUserAdmin: {
     type: Boolean,
-    required: true,
+    default: false,
   },
   userTeam: {
     type: String,

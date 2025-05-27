@@ -1,14 +1,14 @@
 import express from "express";
 import {
-  changeUserTeam,
   getUserInfo,
   registerNewUser,
+  setUserTeamAndRole,
 } from "../controllers/user.controller.js";
 
 const userRouter = express.Router();
 
 userRouter.post("/registernew", registerNewUser);
 userRouter.get("/getuserinfo/:userUniqueID", getUserInfo);
-userRouter.post("/changeuserteam/:userUniqueId", changeUserTeam);
+userRouter.post("/changeuserteamandrole/:userUniqueId", setUserTeamAndRole);
 
 export default userRouter;
