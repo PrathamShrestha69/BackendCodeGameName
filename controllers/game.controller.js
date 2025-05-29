@@ -21,7 +21,9 @@ export const changeRoomDetails = () => {};
 export const getRoomDetails = async (req, res) => {
   const roomName = req.params.roomname;
 
-  const roomInDb = await roomModel.findOne({ roomCode: roomName });
+  const roomInDb = await roomModel
+    .findOne({ roomCode: roomName })
+    .populate("adminUser", "userUniqueID");
 
   res.status(200).send(roomInDb);
 };
