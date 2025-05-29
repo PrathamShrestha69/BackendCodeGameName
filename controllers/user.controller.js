@@ -2,7 +2,7 @@ import user from "../models/user.model.js";
 
 export const registerNewUser = async (req, res) => {
   const data = req.body;
-  console.log({ ...data });
+
   const newUser = new user({ ...data });
   try {
     await newUser.save();
@@ -17,7 +17,7 @@ export const getUserInfo = async (req, res) => {
 
   try {
     const userWithId = await user.findOne({ userUniqueID });
-    console.log(userWithId);
+
     res.status(200).send(userWithId);
   } catch (error) {
     res.status(400).send("Error getting user: " + error.message);
@@ -33,7 +33,6 @@ export const setUserTeamAndRole = async (req, res) => {
       { userUniqueID },
       { userTeam: team, userRole: role }
     );
-    console.log(userWithId);
     res.status(200).send(userWithId);
   } catch (error) {
     res.status(400).send("Error getting user: " + error.message);

@@ -24,6 +24,10 @@ const userSchema = new Schema({
     type: String,
     default: undefined,
   },
+  currentRoom: {
+    type: Schema.Types.ObjectId,
+    ref: "Game",
+  },
 });
 
 export default mongoose.model("User", userSchema);
