@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  changeUserCurrentRoom,
   getUserInfo,
   registerNewUser,
   setUserTeamAndRole,
@@ -9,6 +10,7 @@ const userRouter = express.Router();
 
 userRouter.post("/registernew", registerNewUser);
 userRouter.get("/getuserinfo/:userUniqueID", getUserInfo);
-userRouter.post("/changeuserteamandrole/:userUniqueId", setUserTeamAndRole);
+userRouter.patch("/changeuserteamandrole/:userUniqueId", setUserTeamAndRole);
+userRouter.patch("/changecurrentroom/:userUniqueId", changeUserCurrentRoom);
 
 export default userRouter;
