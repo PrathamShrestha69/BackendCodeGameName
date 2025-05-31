@@ -16,7 +16,7 @@ export const createNewRoom = async (req, res) => {
   }
 };
 
-export const changeRoomDetails = () => {};
+export const changeRoomDetails = async (req, res) => {};
 
 export const getRoomDetails = async (req, res) => {
   const roomName = req.params.roomname;

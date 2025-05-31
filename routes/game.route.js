@@ -8,7 +8,7 @@ import {
 const gameRouter = express.Router();
 
 gameRouter.post("/:roomname", createNewRoom);
-gameRouter.patch("/:roomname", changeRoomDetails);
 gameRouter.get("/:roomname", getRoomDetails);
+gameRouter.patch("/:roomname", changeRoomDetails);
 
 export default gameRouter;
